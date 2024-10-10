@@ -6,7 +6,7 @@ import Web3Modal from "web3modal";
 
 
 import { SwapRouter } from "@uniswap/universal-router-sdk";
-import { TradeType,ETHER,Token,CurrencyAmount,Percent } from "@uniswap/sdk-core";
+import { TradeType,Ether,Token,CurrencyAmount,Percent } from "@uniswap/sdk-core";
 
 import { Trade as V2Trade} from "@uniswap/v2-sdk";
 import { Pool,nearestUsableTick,TickMath,TICK_SPACINGS, FeeAmount, Trade as V3Trade, Route as V3Route} from "@uniswap/v3-sdk";
@@ -127,12 +127,12 @@ export const PROVIDER = ({children}) => {
 
     const swap = async(token_1,token_2,swapInputAmount)=>{
         try {
-            console.log("CALLING ME _____________ SWAP")
+            console.log("CALLING ME _____________ SWAP");
             const _inputAmount = 1;
             const provider = web3Provider();
             const network = await provider.getNetwork();
-            // const ETHER = ETHER.onChain(network.chainID);
-            const ETHER = ETHER.onChain(1);
+            // const ETHER = Ether.onChain(network.chainID);
+            const ETHER = Ether.onChain(1);
 
             const tokenAddress1 = await CONNECTING_CONTRACT("");
             const tokenAddress2 = await CONNECTING_CONTRACT("");
