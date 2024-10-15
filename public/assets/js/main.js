@@ -11,7 +11,7 @@ $(function($) {
         });
 
         // Click To Scroll 
-        $(".mein-menu .navbar-nav a").on("click", function(event) {
+        $(".main-menu .navbar-nav a").on("click", function(event) {
             var $anchor = $(this);
             $("html, body")
                 .stop()
@@ -74,9 +74,9 @@ $(function($) {
         $(window).on("scroll", function() {
             var $window = $(window);
             if ($window.scrollTop() > 0) {
-                $(".mein-menu").addClass("nav-fixed");
+                $(".main-menu").addClass("nav-fixed");
             } else {
-                $(".mein-menu").removeClass("nav-fixed");
+                $(".main-menu").removeClass("nav-fixed");
             }
 
             /*---------------------------

@@ -120,7 +120,7 @@
      #scrollUp {
          right: 0%;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item {
          margin-left: 20px;
      }
      .statistic .content {
@@ -129,28 +129,28 @@
  }
 
  @media (max-width: 991px) {
-     .mein-menu .navbar .navbar-toggler:focus {
+     .main-menu .navbar .navbar-toggler:focus {
          box-shadow: 0;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav {
          height: 350px;
          overflow: auto;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav {
          margin-left: auto;
          -webkit-box-align: start;
          -ms-flex-align: start;
          -ms-grid-row-align: flex-start;
          align-items: flex-start;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item {
          margin-left: 0;
          margin-top: 10px;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item a.nav-link:before {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item a.nav-link:before {
          top: calc(100% + 0px);
      }
-     .mein-menu {
+     .main-menu {
          position: fixed;
          top: 0;
          left: 0;
@@ -161,15 +161,15 @@
          z-index: 99999;
          padding: 10px 0 10px;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item a.nav-link,
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item .language-select .nice-select span {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item a.nav-link,
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item .language-select .nice-select span {
          color: #fff;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item .language-select .nice-select:after {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item .language-select .nice-select:after {
          border-bottom: 2px solid #ffffff;
          border-right: 2px solid #ffffff;
      }
-     .mein-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item a.nav-link:before {
+     .main-menu .navbar #navbarNavDropdown ul.navbar-nav li.nav-item a.nav-link:before {
          background: #ffffff;
      }
      .banner .hero-area .banner-content {

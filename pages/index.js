@@ -26,12 +26,12 @@ const index = () => {
     const [outputAmount,setOutputAmount] = useState(undefined);
     const [transaction,setTransaction] = useState(undefined);
     const [ration,setRation] = useState(undefined);
-
+    const address = '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'; 
 
   return (
         <div>
             <Preloader />
-            <Header address={"address"} connect={"connect"}/>
+            <Header address={address} connect={"connect"}/>
             <Hero setInputAmount={setInputAmount} setLoader={"setLoader"} setOpenToken={setOpenToken} LOAD_TOKEN={"LOAD_TOKEN"} token_1={token_1} token_2={token_2} setToken_1={setToken_1} setToken_2={setToken_2} swap={"swap"}/>
             <Feature/>
             <Platfrom/>
