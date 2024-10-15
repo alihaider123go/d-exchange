@@ -50,7 +50,7 @@ const Header = ({address,connect}) => {
                                 address ? (
                                     <button className="new_button"> {shortenAddress(address)}</button>
                                 ):(
-                                    <button onClick={()=>{"connect()"}} className="new_button"> Connect </button>
+                                    <button onClick={()=>{connect()}} className="new_button"> Connect </button>
                                 )
                             }
                         </ul>
