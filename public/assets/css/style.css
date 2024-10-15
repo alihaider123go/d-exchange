@@ -34,7 +34,7 @@ Description: Bitcoin Investment HTML Template
 
 /* statistic Start */
 
-/* scurity Start */
+/* security Start */
 
 /* testomonial Start */
 
@@ -1109,16 +1109,16 @@ p.text {
     line-height: 1.556;
 }
 
-/* scurity Start */
+/* security Start */
 
-.scurity {
+.security {
     padding: 116px 0px 0px;
     background: -webkit-gradient(linear, left bottom, left top, from(#c2c7ff), to(#fff));
     background: linear-gradient(0deg, #c2c7ff 0%, #fff 100%);
     position: relative;
 }
 
-.scurity .icon-one {
+.security .icon-one {
     position: absolute;
     top: -8%;
     left: -22%;
@@ -1126,7 +1126,7 @@ p.text {
     animation: upornis 5s ease-in infinite;
 }
 
-.scurity .icon-two {
+.security .icon-two {
     position: absolute;
     top: -8%;
     right: -22%;
@@ -1134,16 +1134,16 @@ p.text {
     animation: upornis 6s ease-out infinite;
 }
 
-.scurity .section-head {
+.security .section-head {
     padding-bottom: 57px;
     margin-bottom: -125px;
 }
 
-.scurity .section-head h2.title {
+.security .section-head h2.title {
     padding: 22px 0 16px;
 }
 
-.scurity .box {
+.security .box {
     position: relative;
     border-radius: 20px;
     background-color: white;
@@ -1155,7 +1155,7 @@ p.text {
     z-index: 1;
 }
 
-.scurity .box .scurity-box {
+.security .box .security-box {
     margin-top: 30px;
     padding: 20px 20px 20px;
     background-image: linear-gradient(-45deg, #89f7fe 0%, #66a6ff 100%);
@@ -1167,11 +1167,11 @@ p.text {
     align-items: center;
 }
 
-.scurity .box .scurity-box .icon {
+.security .box .security-box .icon {
     margin-right: 20px;
 }
 
-.scurity .box .scurity-box .content .cont-head {
+.security .box .security-box .content .cont-head {
     font-size: 28px;
     font-family: "Josefin Sans", sans-serif;
     color: #33276a;
@@ -1179,18 +1179,18 @@ p.text {
     line-height: 1;
 }
 
-.scurity .box .scurity-box .content p.text {
+.security .box .security-box .content p.text {
     font-size: 18px;
     font-family: "Open Sans", sans-serif;
     color: #33276a;
     line-height: 1.556;
 }
 
-.scurity .box .scurity-box.two {
+.security .box .security-box.two {
     background-image: linear-gradient(60deg, #d596f6 0%, #a09df8 60%, #6ba4f9 100%);
 }
 
-.scurity .box .scurity-box.three {
+.security .box .security-box.three {
     background-image: linear-gradient(-50deg, #84fab0 0%, #8fd3f4 100%);
 }
 

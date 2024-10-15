@@ -5,7 +5,7 @@ import Hero from "./Hero";
 import Platform from "./Platform";
 import Preloader from "./Preloader";
 import Scroll from "./Scroll";
-import Scurity from "./Scurity";
+import Security from "./Security";
 import Statistics from "./Statistics";
 import Testomonial from "./Testomonial";
 import Token from "./Token";
@@ -18,7 +18,7 @@ export {
   Platform,
   Preloader,
   Scroll,
-  Scurity,
+  Security,
   Statistics,
   Testomonial,
   Token,

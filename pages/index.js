@@ -7,7 +7,7 @@ import {
     Platform,
     Preloader,
     Scroll,
-    Scurity,
+    Security,
     Statistics,
     Testomonial,
     Token,
@@ -36,7 +36,7 @@ const index = () => {
             <Feature/>
             <Platform/>
             <Statistics />
-            <Scurity />
+            <Security />
             <Testomonial />
             <Footer/>
 

@@ -6,21 +6,21 @@
      .platform .bg img {
          width: 39%;
      }
-     .scurity .icon-one {
+     .security .icon-one {
          display: block;
          left: 0%;
      }
-     .scurity .icon-two {
+     .security .icon-two {
          display: block;
          right: 0%;
      }
  }
 
  @media (max-width: 2400px) {
-     .scurity .icon-one {
+     .security .icon-one {
          left: 0%;
      }
-     .scurity .icon-two {
+     .security .icon-two {
          right: 0%;
      }
      .platform .bg img {
@@ -35,10 +35,10 @@
      .platform .bg img {
          width: 67%;
      }
-     .scurity .icon-one {
+     .security .icon-one {
          left: -14%;
      }
-     .scurity .icon-two {
+     .security .icon-two {
          right: -14%;
      }
  }
@@ -65,10 +65,10 @@
      .platform .bg img {
          width: 78%;
      }
-     .scurity .icon-one {
+     .security .icon-one {
          left: -26%;
      }
-     .scurity .icon-two {
+     .security .icon-two {
          right: -26%;
      }
      .banner .illustration .two,
@@ -113,8 +113,8 @@
      .platform .bg img {
          width: 78%;
      }
-     .scurity .icon-one,
-     .scurity .icon-two {
+     .security .icon-one,
+     .security .icon-two {
          display: none;
      }
      #scrollUp {
@@ -194,7 +194,7 @@
          margin: 0px 0px 0px;
          padding: 114px 0 0px;
      }
-     .scurity {
+     .security {
          padding: 0px 0px 0px;
      }
      .testimonial .about-testimonial .client {
@@ -288,7 +288,7 @@
      .testimonial .about-testimonial .client .img .popover.mypopover {
          min-width: 285px !important;
      }
-     .scurity .box {
+     .security .box {
          padding: 0px 15px 30px;
      }
  }
