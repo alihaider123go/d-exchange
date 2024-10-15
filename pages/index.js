@@ -4,7 +4,7 @@ import {
     Footer,
     Feature,
     Hero,
-    Platfrom,
+    Platform,
     Preloader,
     Scroll,
     Scurity,
@@ -34,7 +34,7 @@ const index = () => {
             <Header address={address} connect={connect}/>
             <Hero setInputAmount={setInputAmount} setLoader={setLoader} setOpenToken={setOpenToken} LOAD_TOKEN={LOAD_TOKEN} token_1={token_1} token_2={token_2} setToken_1={setToken_1} setToken_2={setToken_2} swap={swap}/>
             <Feature/>
-            <Platfrom/>
+            <Platform/>
             <Statistics />
             <Scurity />
             <Testomonial />

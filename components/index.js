@@ -2,7 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Feature from "./Feature";
 import Hero from "./Hero";
-import Platfrom from "./Platfrom";
+import Platform from "./Platform";
 import Preloader from "./Preloader";
 import Scroll from "./Scroll";
 import Scurity from "./Scurity";
@@ -15,7 +15,7 @@ export {
   Footer,
   Feature,
   Hero,
-  Platfrom,
+  Platform,
   Preloader,
   Scroll,
   Scurity,

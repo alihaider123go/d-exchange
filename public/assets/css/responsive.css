@@ -3,7 +3,7 @@
 *******************************/
 
  @media (min-width: 2401px) {
-     .platfrom .bg img {
+     .platform .bg img {
          width: 39%;
      }
      .scurity .icon-one {
@@ -23,7 +23,7 @@
      .scurity .icon-two {
          right: 0%;
      }
-     .platfrom .bg img {
+     .platform .bg img {
          width: 54%;
      }
  }
@@ -32,7 +32,7 @@
      .banner {
          padding: 233px 0 235px;
      }
-     .platfrom .bg img {
+     .platform .bg img {
          width: 67%;
      }
      .scurity .icon-one {
@@ -62,7 +62,7 @@
  }
 
  @media (max-width: 1399px) {
-     .platfrom .bg img {
+     .platform .bg img {
          width: 78%;
      }
      .scurity .icon-one {
@@ -110,7 +110,7 @@
          font-size: 22px;
          line-height: 32px;
      }
-     .platfrom .bg img {
+     .platform .bg img {
          width: 78%;
      }
      .scurity .icon-one,
@@ -175,7 +175,7 @@
      .banner .hero-area .banner-content {
          padding-bottom: 30px;
      }
-     .platfrom .bg img {
+     .platform .bg img {
          width: 73%;
      }
      .statistic .content .bg-pic img {
@@ -247,7 +247,7 @@
  }
 
  @media (max-width: 767px) {
-     .platfrom .bg img {
+     .platform .bg img {
          width: 75%;
      }
      .testimonial .about-testimonial .client {
@@ -279,7 +279,7 @@
      .footer .top-footer a.button-1 {
          margin-top: 30px;
      }
-     .platfrom {
+     .platform {
          padding: 200px 0px 0px;
      }
  }
@@ -303,7 +303,7 @@
      .footer .footer-box .form-group input {
          padding: 10px 30px 10px 30px;
      }
-     .platfrom .content {
+     .platform .content {
          padding: 55px 10px 0px;
      }
      h1.head {

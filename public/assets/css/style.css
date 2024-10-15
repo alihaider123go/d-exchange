@@ -30,7 +30,7 @@ Description: Bitcoin Investment HTML Template
 
 /* Feature Start */
 
-/* platfrom Start */
+/* platform Start */
 
 /* statistic Start */
 
@@ -967,16 +967,16 @@ p.text {
     padding-top: 24px;
 }
 
-/* platfrom Start */
+/* platform Start */
 
-.platfrom {
+.platform {
     padding: 420px 0px 0px;
     background: -webkit-gradient(linear, left bottom, left top, from(#c2c7ff), to(#fff));
     background: linear-gradient(0deg, #c2c7ff 0%, #fff 100%);
     position: relative;
 }
 
-.platfrom .bg img {
+.platform .bg img {
     width: 100%;
     position: absolute;
     top: 0%;
@@ -985,14 +985,14 @@ p.text {
     transform: translateX(-50%);
 }
 
-.platfrom .content {
+.platform .content {
     background: #fff;
     padding: 55px 30px 0px;
     position: relative;
     margin-bottom: -2px;
 }
 
-.platfrom .content .section-head {
+.platform .content .section-head {
     padding: 0;
 }
 
@@ -1004,11 +1004,11 @@ p.text {
     padding: 30px 0 120px;
 }
 
-.statistic .platfrom-box {
+.statistic .platform-box {
     padding-top: 30px;
 }
 
-.statistic .platfrom-box .icon {
+.statistic .platform-box .icon {
     border-radius: 50%;
     background-color: ghostwhite;
     -webkit-box-shadow: 2.847px 10.625px 54px 0px rgba(172, 137, 248, 0.25);
@@ -1027,12 +1027,12 @@ p.text {
     align-items: center;
 }
 
-.statistic .platfrom-box .icon img {
+.statistic .platform-box .icon img {
     -webkit-transition: 0.6s;
     transition: 0.6s;
 }
 
-.statistic .platfrom-box p.text {
+.statistic .platform-box p.text {
     font-size: 24px;
     font-family: "Josefin Sans", sans-serif;
     color: #33276a;
@@ -1041,7 +1041,7 @@ p.text {
     padding-top: 25px;
 }
 
-.statistic .platfrom-box:hover .icon img {
+.statistic .platform-box:hover .icon img {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
 }
