@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar } from 'react-icons/fa';
 
-const Testomonial = () => {
+const Testimonial = () => {
     return (
         <section className="testimonial">
             <div className="container">
@@ -156,4 +156,4 @@ const Testomonial = () => {
     );
 };
 
-export default Testomonial;
+export default Testimonial;

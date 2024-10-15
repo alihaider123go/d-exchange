@@ -7,7 +7,7 @@ import Preloader from "./Preloader";
 import Scroll from "./Scroll";
 import Security from "./Security";
 import Statistics from "./Statistics";
-import Testomonial from "./Testomonial";
+import Testimonial from "./Testimonial";
 import Token from "./Token";
 
 export {
@@ -20,6 +20,6 @@ export {
   Scroll,
   Security,
   Statistics,
-  Testomonial,
+  Testimonial,
   Token,
 };

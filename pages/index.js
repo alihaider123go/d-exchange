@@ -9,7 +9,7 @@ import {
     Scroll,
     Security,
     Statistics,
-    Testomonial,
+    Testimonial,
     Token,
 } from "../components"
 
@@ -37,7 +37,7 @@ const index = () => {
             <Platform/>
             <Statistics />
             <Security />
-            <Testomonial />
+            <Testimonial />
             <Footer/>
 
             {openToken && (
