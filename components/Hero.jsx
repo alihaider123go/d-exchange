@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import {IoCloseOutline} from "react-icons/io5";
 
-const Hero = ({setInputAmount, setLoader, setOpenToken, LOAD_TOKEN, token_1, token_2, setToken_1, setToken_2,swap}) => {
+const Hero = ({inputAmount,setInputAmount, setLoader, setOpenToken, LOAD_TOKEN, token_1, token_2, setToken_1, setToken_2,swap}) => {
     
     const reset = ()=>{
         setToken_1("");
@@ -73,7 +73,7 @@ const Hero = ({setInputAmount, setLoader, setOpenToken, LOAD_TOKEN, token_1, tok
                                     <div>
                                         <div className="form-group">
                                             <span onClick={()=>setOpenToken(true)}>Open</span>
-                                            <input type="text" className="form-control" placeholder={token_2?.symbol || "Select"} onClick={()=>setOpenToken(true)}/>
+                                            <input type="text" className="form-control" placeholder={token_2?.symbol || "Select" } onChange={(e)=>setInputAmount(e.target.value)} />
                                         </div>
                                     </div>
 
@@ -85,7 +85,7 @@ const Hero = ({setInputAmount, setLoader, setOpenToken, LOAD_TOKEN, token_1, tok
                                         )
                                     }
                                 </div>    
-                                <a onClick={()=>swap()} className="button button-1">Exchange</a>
+                                <a onClick={()=>swap(token_1, token_2,inputAmount)} className="button button-1">Exchange</a>
                             </div>
                         </div>
                     </div>

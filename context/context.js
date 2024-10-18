@@ -7,9 +7,9 @@ import { SwapRouter } from "@uniswap/universal-router-sdk";
 import { TradeType,Ether,Token,CurrencyAmount,Percent } from "@uniswap/sdk-core";
 
 import { Trade as V2Trade} from "@uniswap/v2-sdk";
-import { Pool,nearestUsableTick,TickMath,TICK_SPACINGS, FeeAmount, Trade as V3Trade, Route as V3Route} from "@uniswap/v3-sdk";
+import { Pool,nearestUsableTick,TickMath,TICK_SPACINGS, FeeAmount, Trade as V3Trade, Route as RouteV3} from "@uniswap/v3-sdk";
 
-import { Trade as RouterTrade, RouteV3 } from "@uniswap/router-sdk";
+import { Trade as RouterTrade } from "@uniswap/router-sdk";
 import IUniswapV3Pool from "@uniswap/v3-core/artifacts/contracts/UniswapV3Pool.sol/UniswapV3Pool.json";
 
 import {web3Provider,CONNECTING_CONTRACT} from "./constants";
@@ -67,7 +67,7 @@ export const PROVIDER = ({children}) => {
         const [token0, token1] = tokenA.sortsBefore(tokenB)?[tokenA,tokenB]:[tokenB,tokenA];
 
         const poolAddress = Pool.getAddress(token0,token1,feeAmount);
-        const contract = new ethers.Contract(poolAddress,IUniswapV3Pool,provider);
+        const contract = new ethers.Contract(poolAddress,IUniswapV3Pool.abi,provider);
 
         let liquidity = await contract.liquidity();
         let {sqrtPriceX96,tick} = await contract.slot0();
@@ -81,12 +81,12 @@ export const PROVIDER = ({children}) => {
             {
                 index:nearestUsableTick(TickMath.MIN_TICK,TICK_SPACINGS[feeAmount]),
                 liquidityNet:liquidity,
-                liquidityGros:liquidity,
+                liquidityGross:liquidity,
             },
             {
                 index:nearestUsableTick(TickMath.MIN_TICK,TICK_SPACINGS[feeAmount]),
                 liquidityNet:JSBI.multiply(liquidity,JSBI.BigInt("-1")),
-                liquidityGros:liquidity,
+                liquidityGross:liquidity,
             }
         ]);
     }
@@ -101,6 +101,9 @@ export const PROVIDER = ({children}) => {
 
 
     function buildTrade(trades){
+
+
+        
         return new RouterTrade({
             v2Routes:trades.filter((trade)=>trade instanceof V2Trade).map((trade)=>({
                 routev2:trade.route,
@@ -124,16 +127,20 @@ export const PROVIDER = ({children}) => {
     const RECIPIENT = "0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B"; 
 
     const swap = async(token_1,token_2,swapInputAmount)=>{
+        
         try {
             console.log("CALLING ME _____________ SWAP");
-            const _inputAmount = 1;
-            const provider = web3Provider();
-            const network = await provider.getNetwork();
-            // const ETHER = Ether.onChain(network.chainID);
-            const ETHER = Ether.onChain(1);
+            //const _inputAmount = 1;
+            const provider = await web3Provider();
+            // const network = await provider.getNetwork();
+            const ETHER = Ether.onChain(token_1.chainId);
+            // const ETHER = Ether.onChain(1);
 
-            const tokenAddress1 = await CONNECTING_CONTRACT("");
-            const tokenAddress2 = await CONNECTING_CONTRACT("");
+            const tokenAddress1 = await CONNECTING_CONTRACT(token_1.address);
+            const tokenAddress2 = await CONNECTING_CONTRACT(token_2.address);
+
+            // const tokenAddress1 = await CONNECTING_CONTRACT("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2");
+            // const tokenAddress2 = await CONNECTING_CONTRACT("0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48");
 
             const TOKEN_A = new Token(
                 tokenAddress1.chainId,
@@ -158,14 +165,22 @@ export const PROVIDER = ({children}) => {
                 provider
             );
 
-            const inputEther = ethers.utils.parseEther("1").toString();
+
+            const inputEther = ethers.utils.parseEther(swapInputAmount).toString();
+            
             const trade = await V3Trade.fromRoute(
                 new RouteV3([WETH_USDC_V3],ETHER,TOKEN_B),
-                CurrencyAmount.fromRawAmount(Ether,inputEther),
+                CurrencyAmount.fromRawAmount(ETHER,inputEther),
                 TradeType.EXACT_INPUT
             );
 
+            console.log(trade);
+
+
             const routerTrade = buildTrade([trade]);
+
+            console.log(routerTrade);
+
             const opts = swapOptions({});
             const params = SwapRouter.swapERC20CallParameters(routerTrade,opts);
             
@@ -184,35 +199,36 @@ export const PROVIDER = ({children}) => {
             tokenB = await tokenAddress2.balance;
 
             console.log("-----------------BEFORE");
-            console.log("EthBalance:", ethers.utils.formatUnits(eth));
+            console.log("EthBalance:", ethers.utils.formatUnits(ethBalance,18));
             console.log("tokenA:", tokenA);
             console.log("tokenB:", tokenB);
 
 
-            const tx = await Signer.sendTransaction({
-                data:params.calldata,
-                to:"0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B",
-                value: params.value,
-                from: RECIPIENT
-            });
+            // const tx = await Signer.sendTransaction({
+            //     data:params.calldata,
+            //     to:"0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B",
+            //     value: params.value,
+            //     from: RECIPIENT
+            // });
 
-            console.log("-----------------CALLING_ME");
-            const receipt = await tx.wait();
-            console.log("-----------------SUCCESS");
+            // console.log("-----------------CALLING_ME");
+            // const receipt = await tx.wait();
+            // console.log("-----------------SUCCESS");
 
-            console.log("STATUS:", receipt.status);
+            // console.log("STATUS:", receipt.status);
 
-            ethBalance = await provider.getBalance(RECIPIENT);
-            tokenA = await tokenAddress1.balance;
-            tokenB = await tokenAddress2.balance;
+            // ethBalance = await provider.getBalance(RECIPIENT);
+            // tokenA = await tokenAddress1.balance;
+            // tokenB = await tokenAddress2.balance;
 
-            console.log("-----------------AFTER");
-            console.log("EthBalance:", ethers.utils.formatUnits(eth));
-            console.log("tokenA:", tokenA);
-            console.log("tokenB:", tokenB);
+            // console.log("-----------------AFTER");
+            // console.log("EthBalance:", ethers.utils.formatUnits(ethBalance,18));
+            // console.log("tokenA:", tokenA);
+            // console.log("tokenB:", tokenB);
 
 
         } catch (error) {
+            console.log(error);
             const errMsg = parseErrorMsg(error);
             console.log(errMsg);
             notifyError(errMsg);

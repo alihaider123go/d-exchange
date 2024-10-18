@@ -32,7 +32,7 @@ const index = () => {
         <div>
             <Preloader />
             <Header address={address} connect={connect}/>
-            <Hero setInputAmount={setInputAmount} setLoader={setLoader} setOpenToken={setOpenToken} LOAD_TOKEN={LOAD_TOKEN} token_1={token_1} token_2={token_2} setToken_1={setToken_1} setToken_2={setToken_2} swap={swap}/>
+            <Hero inputAmount={inputAmount} setInputAmount={setInputAmount} setLoader={setLoader} setOpenToken={setOpenToken} LOAD_TOKEN={LOAD_TOKEN} token_1={token_1} token_2={token_2} setToken_1={setToken_1} setToken_2={setToken_2} swap={swap}/>
             <Feature/>
             <Platform/>
             <Statistics />

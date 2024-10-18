@@ -53,8 +53,7 @@ export const CONNECTING_CONTRACT = async(ADDRESS)=>{
             supply:ethers.utils.formatEther(supply.toString()),
             balance:ethers.utils.formatEther(balance.toString()),
             address:address,
-            chainId:1,
-            // chainId:network.chainId
+            chainId:network.chainId
         };
         return token;
 

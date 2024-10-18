@@ -61,7 +61,7 @@ const Token = ({ notifyError, notifySuccess, setOpenToken, LOAD_TOKEN, token_1, 
 
                                 {
                                     displayToken ? (
-                                        <a onClick={()=>searchToken()} className="button button-1">
+                                        <a onClick={()=>selectToken()} className="button button-1">
                                             {shortenAddress(displayToken?.address)} {displayToken?.symbol}
                                         </a>    
                                     ) : (
