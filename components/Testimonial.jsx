@@ -71,7 +71,7 @@ const Testimonial = () => {
                                         <div className="client-review">
                                             <div className="stars">
                                                 {[1,2,3,4,5].map((item,index)=>(
-                                                    <FaStar/>
+                                                    <FaStar key={item +'_rating_start_'+ index}/>
                                                 ))}
                                             </div>
                                             <p className="bottom-text">
