@@ -134,10 +134,12 @@ export const PROVIDER = ({children}) => {
             const provider = await web3Provider();
             // const network = await provider.getNetwork();
             const ETHER = Ether.onChain(token_1.chainId);
-            // const ETHER = Ether.onChain(1);
+            const signer = provider.getSigner();
 
             const tokenAddress1 = await CONNECTING_CONTRACT(token_1.address);
             const tokenAddress2 = await CONNECTING_CONTRACT(token_2.address);
+
+            const userAddress = await signer.getAddress();
 
             // const tokenAddress1 = await CONNECTING_CONTRACT("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2");
             // const tokenAddress2 = await CONNECTING_CONTRACT("0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48");
@@ -194,7 +196,7 @@ export const PROVIDER = ({children}) => {
             let tokenA;
             let tokenB;
 
-            ethBalance = await provider.getBalance(RECIPIENT);
+            ethBalance = await provider.getBalance(userAddress);
             tokenA = await tokenAddress1.balance;
             tokenB = await tokenAddress2.balance;
 
@@ -204,27 +206,27 @@ export const PROVIDER = ({children}) => {
             console.log("tokenB:", tokenB);
 
 
-            // const tx = await Signer.sendTransaction({
-            //     data:params.calldata,
-            //     to:"0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B",
-            //     value: params.value,
-            //     from: RECIPIENT
-            // });
+            const tx = await Signer.sendTransaction({
+                data:params.calldata,
+                to:userAddress,
+                value: params.value,
+                from: userAddress
+            });
 
-            // console.log("-----------------CALLING_ME");
-            // const receipt = await tx.wait();
-            // console.log("-----------------SUCCESS");
+            console.log("-----------------CALLING_ME");
+            const receipt = await tx.wait();
+            console.log("-----------------SUCCESS");
 
-            // console.log("STATUS:", receipt.status);
+            console.log("STATUS:", receipt.status);
 
-            // ethBalance = await provider.getBalance(RECIPIENT);
-            // tokenA = await tokenAddress1.balance;
-            // tokenB = await tokenAddress2.balance;
+            ethBalance = await provider.getBalance(userAddress);
+            tokenA = await tokenAddress1.balance;
+            tokenB = await tokenAddress2.balance;
 
-            // console.log("-----------------AFTER");
-            // console.log("EthBalance:", ethers.utils.formatUnits(ethBalance,18));
-            // console.log("tokenA:", tokenA);
-            // console.log("tokenB:", tokenB);
+            console.log("-----------------AFTER");
+            console.log("EthBalance:", ethers.utils.formatUnits(ethBalance,18));
+            console.log("tokenA:", tokenA);
+            console.log("tokenB:", tokenB);
 
 
         } catch (error) {
